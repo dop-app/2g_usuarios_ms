@@ -4,13 +4,14 @@ El microservicio usuario,se encarga de la gestión de usuario para la aplicació
 
 **Ejecución:**
 
-1. Compilar el microservicio:
+1.Compilar el microservicio:
+
 **docker-compose build**
 
-2. Hacer migraciones pertinentes de la bd:
+2.Hacer migraciones pertinentes de la bd:
 
 **docker-compose run --rm users-ms rails db:migrate**
 
-3. Correr el microservicio.
+3.Correr el microservicio.
 
 **docker-compose up**
