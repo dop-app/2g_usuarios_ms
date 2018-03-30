@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-match 'auth/failure', to: redirect('/'), via: [:get, :post]
-match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+get 'auth/:provider/callback', to: 'sessions#create'
+delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
+
 
 resources :users
+root 'users#index'
 
 end
