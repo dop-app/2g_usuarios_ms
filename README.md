@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+El microservicio usuario,se encarga de la gestión de usuario para la aplicación DOP.
 
-Things you may want to cover:
+**Ejecución:**
 
-* Ruby version
+1.Compilar el microservicio:
 
-* System dependencies
+**docker-compose build**
 
-* Configuration
+2.Hacer migraciones pertinentes de la bd:
 
-* Database creation
+**docker-compose run --rm users-ms rails db:migrate**
 
-* Database initialization
+3.Correr el microservicio.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**docker-compose up**
