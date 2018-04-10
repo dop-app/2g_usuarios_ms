@@ -175,6 +175,14 @@ definitions:
         type: string
       picture:
         type: string
+      age:
+        type: string
+      oauth_token:
+        type: string
+      uid:
+       type: string
+      provider:
+       type: string
   UsersList:
     type: object
     required:

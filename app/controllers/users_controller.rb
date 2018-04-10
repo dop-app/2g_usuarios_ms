@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :set_user, only: [:show, :update, :destroy]
 
  
 def index
@@ -7,7 +8,6 @@ def index
 end
 
 def show
-    @user = User.find(params[:id])
     render json: @user, status: :ok
 end
 def new
@@ -21,12 +21,7 @@ def create
 end
 
 def destroy
-  @user = User.where(id: params[:id]).first
-  if @user.destroy
-     head(:ok)
-  else 
-     head(:unprocessable_entity) 
-  end
+  @user.destroy
 end
 
 
@@ -47,4 +42,9 @@ private
 def user_params
     params.require(:user).permit(:name, :age, :gender, :picture, :avatar,:email)
   end
+
+# Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
 end

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-mount_uploader :avatar, AvatarUploader
+#mount_uploader :avatar, AvatarUploader
 def self.sign_in_from_omniauth(auth)
  find_by(provider: auth['provider'],uid: auth['uid']) || create_user_from_omniauth(auth)
 end
@@ -14,7 +14,7 @@ def self.create_user_from_omniauth(auth)
         email: auth['info']['email'],
         gender: auth['extra']['raw_info']['gender'],
         picture: auth['info']['image'],
-        avatar: auth['info']['image']
+        #avatar: auth['info']['image']
   )
 end
 
