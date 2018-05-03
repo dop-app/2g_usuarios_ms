@@ -20,6 +20,10 @@ gem 'react-rails'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '3.8.0'
+gem 'bcrypt', '~> 3.1.7'
+gem 'knock'
+gem 'jwt'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
