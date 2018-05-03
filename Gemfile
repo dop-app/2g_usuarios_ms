@@ -20,6 +20,10 @@ gem 'react-rails'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '3.8.0'
+gem 'bcrypt', '~> 3.1.7'
+gem 'knock'
+gem 'jwt'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -48,5 +52,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'therubyracer', :platforms => :ruby 
+gem 'therubyracer', :platforms => :ruby
 gem 'execjs'
+gem 'wash_out'
