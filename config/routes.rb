@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :users
   root 'users#index'
 
+wash_out :wsusers
+
 end
