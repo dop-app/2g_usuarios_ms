@@ -6,4 +6,6 @@ delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
 resources :users
 root 'users#index'
 
+wash_out :wsusers
+
 end
