@@ -12,20 +12,19 @@ gem 'rails', '~> 5.1.5'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-gem 'omniauth-facebook', '~> 4.0.0'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-twitter'
-gem 'bootstrap-sass'
-gem 'react-rails'
-gem 'active_model_serializers', '~> 0.10.0'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '3.8.0'
+gem 'bcrypt', '~> 3.1.7'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'rack-cors'
+gem 'knock'
+gem 'jwt'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+#
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
