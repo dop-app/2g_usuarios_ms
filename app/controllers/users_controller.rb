@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:index, :show, :create, :new, :destroy, :edit, :current, :update]
+  before_action :authenticate_user, only: [:destroy, :edit, :current, :update]
   before_action :set_user, only: [:show, :update, :destroy]
 
   
