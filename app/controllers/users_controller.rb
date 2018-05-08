@@ -5,7 +5,14 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    render json: @users, status: :ok    
+    @user= User.first
+    if User.exists?(:id => 1)
+      user = User.first
+      token = Knock::AuthToken.new(payload: { sub: user.id }).token
+      render json: {usuarios: @users, token: token}, status: :ok
+    else
+      render json: @users, status: :ok
+    end
   end
 
   def show
@@ -40,6 +47,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def token
+    @user = User.find(params[:id])
   end
 
 private

@@ -33,8 +33,13 @@ class LdapController < ApplicationController
                 results = ActiveRecord::Base.connection.exec_query(query)
                 if results.present?
                     @newAuth = ObjAuth.new(email, password, "true")
+                    user=User.find_by(email: email+'@unal.edu.co')
+                    puts(user.id)
+                    token = Knock::AuthToken.new(payload: { sub: user.id }).token
                     puts("Autenticación satisfactoria.")
-                    render json: @newAuth
+                    puts(token)                    
+                    #render json: {auth: @newAuth,token: token}
+                    render json: {auth: @newAuth, token: token}
                 else
                     puts("Autenticación no satisfactoria, el usuario no se encuentra registrado en la base de datos.")
                     @newAuth = ObjAuth.new(email, password, "false")
