@@ -43,12 +43,12 @@ class LdapController < ApplicationController
                 else
                     puts("Autenticación no satisfactoria, el usuario no se encuentra registrado en la base de datos.")
                     @newAuth = ObjAuth.new(email, password, "false")
-                    render json: @newAuth
+                    render json: {auth: @newAuth}
                 end
             else
                 puts("Autenticación no satisfactoria, el usuario no se encuentra registrado en el LDAP.")
                 @newAuth = ObjAuth.new(email, password, "false")
-                render json: @newAuth
+                render json: {auth: @newAuth}
             end
         end
     end
