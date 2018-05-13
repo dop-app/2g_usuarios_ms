@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     if User.exists?(:id => 1)
       user = User.first
       token = Knock::AuthToken.new(payload: { sub: user.id }).token
-      render json: {usuarios: @users, token: token}, status: :ok
+      render json: @users, status: :ok
+      #render json: {usuarios: @users, token: token}, status: :ok
     else
       render json: @users, status: :ok
     end
@@ -49,13 +50,21 @@ class UsersController < ApplicationController
     end
   end
 
-  def token
-    @user = User.find(params[:id])
+def validation
+    token = params[:token]
+    decoded_token = JWT.decode token, nil, false
+    fa = decoded_token[0]["sub"]
+    id= params[:idsession]
+    if fa == id
+      render json: true
+    else
+      render json: false
+    end    
   end
 
 private
 def user_params
-  params.require(:user).permit(:name, :age, :gender, :picture, :avatar,:email,:password,:password_confirmation)
+  params.require(:user).permit(:name, :age, :gender, :picture, :avatar,:email,:password,:password_confirmation,:token,:idsession)
 end
 
 # Use callbacks to share common setup or constraints between actions.
