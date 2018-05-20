@@ -12,7 +12,7 @@ services:
       MYSQL_HOST: users-db
   users-ms:
     build: .
-    command: bash -c "sleep 40 && rm -f tmp/pids/server.pid && bundle exec rails db:migrate && bundle exec rails s -p 4001 -b '0.0.0.0'"
+    command: bash -c "sleep 40 && rm -f tmp/pids/server.pid && bundle exec rails db:migrate && bundle exec rails db:seed  && bundle exec rails s -p 4001 -b '0.0.0.0'"
     ports:
       - "4001:4001"
     depends_on:
